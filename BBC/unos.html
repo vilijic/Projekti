@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Unos</title>
+    <link rel="stylesheet" type="text/css" href="design.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+
+<body>
+    <header>
+        <div class="wrapper">
+            <nav>
+                <img src="logo.png">
+                <a href="index.php">Home</a>
+                <a href="kategorija.php?kategorija=vijesti">News</a>
+                <a href="kategorija.php?kategorija=sport">Sport</a>
+                <a href="administracija.php">Administracija</a>
+            </nav>
+        </div>
+    </header>
+    <br>
+    <div class="wrapper">
+        <form class="untek" enctype="multipart/form-data"  id="forma" method='post' action='unos.php'>
+            <label for="naslov">Naslov vijesti: (Između 5 i 30 znakova.)</label>
+            <br />
+            <input id ="naziv" name="naslov" type="text"/>
+            <span id="pornas"></span>
+            <br />
+            <label for="ksad">Kratki sadržaj vijesti: (Između 10 i 100 znakova.)</label>
+            <br />
+            <textarea id ="ksad" rows="3" name="ksad"></textarea>
+            <span id="porksad"></span>
+            <br />
+            <label for="sadrzaj">Sadržaj Vijesti (Ne smije biti prazan.)</label>
+            <br />
+            <textarea id="sadrzaj" rows="7" name="sadrzaj"></textarea>
+            <span id="porsad"></span>
+            <br />
+            <label for="kategorija">Kategorija</label>
+            <br />
+            <select id="kategorija"  name="kategorija">
+                <option value="Sport">Sport</option>
+                <option value="Vijesti">Vijesti</option>
+            </select>
+            <span id="porkat"></span>
+            <br />
+            
+            <label for="slika">Slika vijesti (Potrebno je ubaciti sliku.)</label>
+            <input id="slika" name="slika" type="file"/>
+            <span id="porsli"></span>
+
+            <label for="arh">Spremiti u arhivu:
+                <input class="siri" type="checkbox" name="arh" />
+            </label>
+            <br>
+            <button type="reset" value="Ponisti">Poništi</button>
+            <button type="submit" id="posalji" value="Prihvati">Prihvati</button>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        document.getElementById("posalji").onclick = function (event) {
+            var sndFrm = true;       
+            var Pnaz = document.getElementById("naziv");
+            var naz = document.getElementById("naziv").value;
+            if (naz.length < 5 || naz.length > 30) {
+                sndFrm = false;
+                Pnaz.style.border = "3px solid red";
+                document.getElementById("pornas").innerHTML = "Naslov mora biti između 5 i 30 znakova!";
+                document.getElementById("pornas").style.color="red";
+            } else {
+                Pnaz.style.border = "3px solid green";
+                document.getElementById("pornas").innerHTML = "";
+                
+            }
+    
+            var Pksad = document.getElementById("ksad");
+            var ksad = document.getElementById("ksad").value;
+            if (ksad.length < 10 || ksad.length > 100) {
+                sndFrm = false;
+                Pksad.style.border = "3px solid red";
+                document.getElementById("porksad").innerHTML = "Kratki sadržaj mora imati između 10 i 100 znakova!";
+                document.getElementById("porksad").style.color="red";
+            } else {
+                Pksad.style.border = "3px solid green";
+                document.getElementById("porksad").innerHTML = "";
+            }
+
+            var Psadrzaj = document.getElementById("sadrzaj");
+            var sadrzaj = document.getElementById("sadrzaj").value;
+            if (sadrzaj.length == 0) {
+                sndFrm = false;
+                Psadrzaj.style.border = "3px solid red";
+                document.getElementById("porsad").innerHTML = "Sadržaj ne može biti prazan!";
+                document.getElementById("porsad").style.color="red";
+            } else {
+                Psadrzaj.style.border = "3px solid green";
+                document.getElementById("porsad").innerHTML = "";
+            }
+
+            var PSlika = document.getElementById("slika");
+            var slika = document.getElementById("slika").value;
+            if (slika.length == 0) {
+                sndFrm = false;
+                PSlika.style.border = "3px solid red";
+                document.getElementById("porsli").innerHTML = "Potrebno je unijeti sliku!";
+                document.getElementById("porsli").style.color="red";
+            } else {
+                PSlika.style.border = "3px solid green";
+                document.getElementById("porsli").innerHTML = "";
+            }
+
+            if (sndFrm == false) {
+                event.preventDefault();
+            }
+    
+        };
+    </script>
+
+    <footer>
+        <div class="wrapper">
+
+            <hr>
+            <p><b>Copyright © BBC</b>The BBC is not resposible for the content of external sites.Read about our approach
+                to
+                external linking</p>
+        </div>
+    </footer>
+
+
+</body>
+
+
+
+
+
+
+</html>

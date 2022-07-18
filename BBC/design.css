@@ -1,0 +1,164 @@
+
+button{
+    width:20%;
+
+}
+
+* {
+    margin:0 auto;
+    width:100%;
+
+
+}
+
+html{
+    height:100%;
+
+}
+
+
+.wrapper{
+    flex: 1 0 auto;
+    width:60%;
+
+   
+
+}
+header {
+ 
+    width:100%;
+    background-color: Black;
+
+
+}
+
+nav img{ 
+    padding-top:10px;
+    padding-bottom:10px;
+    width:10%;
+}
+
+nav{
+    
+    margin-left:5px;
+}
+nav a {
+    font-size:12px;
+    padding-left:2%;
+    color:white;
+    width:100%;
+
+}
+nav a:hover{
+    text-decoration:  none;
+    color:white;
+
+
+
+}
+footer{
+    flex-shrink: 0;
+    font-size:12px;
+    color:white;
+    background-color:grey;
+}
+body{
+margin:0 auto;
+height:100%;
+display: flex;
+  flex-direction: column;
+
+
+}
+#dat{
+    display:inline-block;
+    width:50%;
+
+
+}
+#dati{
+    display:inline-block;
+    text-align:right;
+    width:40%;
+    color:lightgray;
+
+}
+
+#pnas{
+    border-left:5px solid red;
+
+}
+#pnasi{
+
+    border-left:5px solid yellow;
+
+}
+div.drh{
+    font-weight: bolder ;
+    text-align:left;
+    background-color: rgb(255, 210, 48);
+
+}
+div.drh h2{
+    font-weight: bold ;
+
+
+}
+
+section img{
+
+    width:100%;
+}
+
+form.untek button{
+    width:20%;
+    
+
+}
+
+.sir{
+    width:30%;
+
+
+}
+.siri{
+    display:inline-block;
+    width:5%;
+
+
+}
+div.vjh {
+    font-weight: bolder ;
+    text-align:left;
+    background-color: rgb(48, 255, 238) !important ;
+
+}
+div.vjh h2 {
+    font-weight: bold ;
+
+
+}
+
+#nas {
+color:black;
+
+
+
+}
+
+#ksad{
+    color:black;
+
+
+}
+#noh:hover{
+
+    text-decoration: none;
+
+}
+
+#nasi{
+    color:black;
+    font-size: small;
+
+}
